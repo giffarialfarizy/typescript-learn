@@ -1,22 +1,18 @@
 "use strict";
-// let greet = () => {
-//   console.log('hello world');
-// }
-// greet = 'hello';
-let greet;
-greet = () => {
-    console.log('hello again');
+// Contoh 1
+const logDetails = (uid, item) => {
+    console.log(`${item} has uid of ${uid}`);
 };
-// function 1
-const add = (a, b, c = 10) => {
-    console.log(a + b);
-    console.log(c);
+const logDetails2 = (uid, item) => {
+    console.log(`${item} has also uid of ${uid}`);
 };
-// '?' adalah optional. jika ada default value, tidak bisa pakai '?'
-// '|' adalah union type
-add(5, 10, '20');
-// function 2
-const minus = (a, b) => {
-    return a + b;
+// Contoh 2
+const greet = (user) => {
+    console.log(`${user.name} says hello`);
 };
-let result = minus(10, 7);
+const greet2 = (user) => {
+    console.log(`${user.name} says hello`);
+};
+// panggil fungsi
+logDetails2(12, 'balok');
+greet2({ name: 'Giffari', uid: 1 });

@@ -1,29 +1,28 @@
-// let greet = () => {
-//   console.log('hello world');
-// }
-
-// greet = 'hello';
-
-let greet: Function;
-
-greet = () => {
-  console.log('hello again');
+// Contoh 1
+const logDetails = (uid: string | number, item: string) => {
+  console.log(`${item} has uid of ${uid}`);
 };
 
-// function 1
-const add = (a: number, b: number, c: number | string = 10) => {
-  console.log(a + b);
-  console.log(c);
+// bisa diganti menjadi
+
+type StringOrNum = string | number;
+
+const logDetails2 = (uid: StringOrNum, item: string) => {
+  console.log(`${item} has also uid of ${uid}`);
 };
 
-// '?' adalah optional. jika ada default value, tidak bisa pakai '?'
-// '|' adalah union type
-
-add(5, 10, '20');
-
-// function 2
-const minus = (a: number, b: number): number => {
-  return a + b;
+// Contoh 2
+const greet = (user: { name: string; uid: StringOrNum }) => {
+  console.log(`${user.name} says hello`);
 };
 
-let result = minus(10, 7);
+// bisa diganti menjadi
+type objWithName = { name: string; uid: StringOrNum };
+
+const greet2 = (user: objWithName) => {
+  console.log(`${user.name} says hello`);
+};
+
+// panggil fungsi
+logDetails2(12, 'balok');
+greet2({ name: 'Giffari', uid: 1 });
