@@ -1,18 +1,22 @@
 "use strict";
-// Contoh 1
-const logDetails = (uid, item) => {
-    console.log(`${item} has uid of ${uid}`);
+// let greet: Function;
+// example 1
+let greet;
+greet = (name, greeting) => {
+    console.log(`${name} says ${greeting}`);
 };
-const logDetails2 = (uid, item) => {
-    console.log(`${item} has also uid of ${uid}`);
+// example 2
+let calc;
+calc = (numOne, numTwo, action) => {
+    if (action === 'add') {
+        return numOne + numTwo;
+    }
+    else {
+        return numOne - numTwo;
+    }
 };
-// Contoh 2
-const greet = (user) => {
-    console.log(`${user.name} says hello`);
+// example 3
+let logDetails;
+logDetails = (ninja) => {
+    console.log(`${ninja.name} is ${ninja.age} years old`);
 };
-const greet2 = (user) => {
-    console.log(`${user.name} says hello`);
-};
-// panggil fungsi
-logDetails2(12, 'balok');
-greet2({ name: 'Giffari', uid: 1 });

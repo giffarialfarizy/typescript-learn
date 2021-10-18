@@ -1,28 +1,27 @@
-// Contoh 1
-const logDetails = (uid: string | number, item: string) => {
-  console.log(`${item} has uid of ${uid}`);
+// let greet: Function;
+
+// example 1
+let greet: (a: string, b: string) => void;
+greet = (name: string, greeting: string) => {
+  console.log(`${name} says ${greeting}`);
 };
 
-// bisa diganti menjadi
+// example 2
+let calc: (a: number, b: number, c: string) => number;
 
-type StringOrNum = string | number;
-
-const logDetails2 = (uid: StringOrNum, item: string) => {
-  console.log(`${item} has also uid of ${uid}`);
+calc = (numOne: number, numTwo: number, action: string) => {
+  if (action === 'add') {
+    return numOne + numTwo;
+  } else {
+    return numOne - numTwo;
+  }
 };
 
-// Contoh 2
-const greet = (user: { name: string; uid: StringOrNum }) => {
-  console.log(`${user.name} says hello`);
+// example 3
+let logDetails: (obj: { name: string; age: number }) => void;
+
+type person = { name: string; age: number };
+
+logDetails = (ninja: person) => {
+  console.log(`${ninja.name} is ${ninja.age} years old`);
 };
-
-// bisa diganti menjadi
-type objWithName = { name: string; uid: StringOrNum };
-
-const greet2 = (user: objWithName) => {
-  console.log(`${user.name} says hello`);
-};
-
-// panggil fungsi
-logDetails2(12, 'balok');
-greet2({ name: 'Giffari', uid: 1 });
