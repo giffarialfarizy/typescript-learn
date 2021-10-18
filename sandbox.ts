@@ -1,18 +1,33 @@
-let character = 'mario';
-let age = 30;
-let isBlackBelt = false;
+let age: any = 25;
+age = true;
+console.log(age);
 
-// character = 20;
-character = 'luigi';
+age = 'hello';
+console.log(age);
 
-// age = 'yoshi';
-age = 40;
+age = {
+  name: 'luigi',
+};
+console.log(age);
 
-// isBlackbelt = 'yes';
-isBlackBelt = true;
+// mixed
+let mixed: any[] = [];
 
-const circ = (diameter: number) => {
-  return diameter * Math.PI;
+mixed.push(5);
+mixed.push('mario');
+mixed.push(false);
+console.log(mixed);
+
+// salah, bukan pakai sama dengan (=)
+// let ninja= {
+//   name: any,
+//   age: any
+// };
+
+let ninja: {
+  name: any;
+  age: any;
 };
 
-console.log(circ(7.5));
+ninja = { name: 25, age: 25 };
+console.log(ninja);
